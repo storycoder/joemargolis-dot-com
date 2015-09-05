@@ -1,13 +1,11 @@
-<h1>Jow</h1>
+<h1>Joseph's Blog</h1>
 
 <div class="row">
   <% @blog_posts.each do |blog_post| %>
   <div class="col-md-6">
     <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4><%= link_to blog_post.title, blog_post %></h4>
-      </div>
       <div class="panel-body">
+        <h4><%= link_to blog_post.title, blog_post %></h4>
         by <strong><%= blog_post.author %></strong>
         </div>
         <p><%= blog_post.blog_entry[0..250] %>...[<%= link_to "READ MORE", blog_post %>]</p>
@@ -23,4 +21,3 @@
 
 <br>
 
-<%= link_to 'New Blog post', new_blog_post_path %>
