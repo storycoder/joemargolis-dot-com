@@ -1,19 +1,12 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @blog_post.title %>
-</p>
+ <h4><%= @blog_post.title %></h4>
 
-<p>
-  <strong>Author:</strong>
-  <%= @blog_post.author %>
-</p>
-
-<p>
-  <strong>Blog entry:</strong>
-  <%= @blog_post.blog_entry %>
-</p>
+<div class="panel-body">
+  <p>by <strong><%= @blog_post.author %></strong> <span class="posted-at">posted at: <%= @blog_post.created_at.strftime('%m/%d/%Y at %I:%M%p') %></span><br /></p>
+	<p>
+	  <%= @blog_post.blog_entry %>
+	</p>
+</div>
 
 <%= link_to 'Edit', edit_blog_post_path(@blog_post) %> |
 <%= link_to 'Back', blog_posts_path %>
